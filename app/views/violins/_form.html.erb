@@ -1,0 +1,25 @@
+<%= form_for(@violin) do |f| %>
+  <% if @violin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@violin.errors.count, "error") %> prohibited this violin from being saved:</h2>
+
+      <ul>
+      <% @violin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :maker %><br>
+    <%= f.text_field :maker %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

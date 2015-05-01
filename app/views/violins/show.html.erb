@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Maker:</strong>
+  <%= @violin.maker %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @violin.price %>
+</p>
+
+<%= link_to 'Edit', edit_violin_path(@violin) %> |
+<%= link_to 'Back', violins_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Violins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Maker</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @violins.each do |violin| %>
+      <tr>
+        <td><%= violin.maker %></td>
+        <td><%= violin.price %></td>
+        <td><%= link_to 'Show', violin %></td>
+        <td><%= link_to 'Edit', edit_violin_path(violin) %></td>
+        <td><%= link_to 'Destroy', violin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Violin', new_violin_path %>
